@@ -1,0 +1,48 @@
+
+{% load static %}
+<div>
+    <div class="head">
+        <!-- Header with Logo -->
+        <div class="text-center">
+            <img src="{% static 'img/logo1.png' %}" alt="Logo" class="img-fluid rounded-circle mt-5" width="100px" height="100px">
+        </div>
+        {% comment %} <h1 class="text-black mt-2"><b>BlackBox</b></h1> {% endcomment %}
+
+        <!-- Sidebar -->
+        <nav class="nav flex-column text-center">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/dashboard/' %}active{% endif %}" href="{% url 'dashboard' %}">
+                            <i class="fa-solid fa-house"></i>&nbsp;Home Page
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/generate_record/' %}active{% endif %}" href="{% url 'generate_record' %}">
+                            <i class="fa-regular fa-calendar-days"></i>&nbsp;Generate Report
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/view_violations/' %}active{% endif %}" href="{% url 'view_violations' %}">
+                            <i class="fa-solid fa-chart-simple"></i>&nbsp;View Violations
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/help/' %}active{% endif %}" href="{% url 'help' %}">
+                            <i class="fa-solid fa-gear"></i>&nbsp;Settings
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">
+                            <i class="fa-solid fa-right-from-bracket"></i>&nbsp;Sign Out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+
+

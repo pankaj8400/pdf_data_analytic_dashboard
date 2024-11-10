@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Violation Report</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: right;">
+        <a href="{% url 'dashboard' %}">Back to Dashboard</a>
+    </div>
+    <h1>Report</h1>
+    <button onclick="window.print()">Download PDF</button>
+    <a href="{% url 'download_csv' %}" class="btn btn-primary">Download CSV</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Camera Number</th>
+                <th>Without Jacket</th>
+                <th>Without Helmet</th>
+                <th>Both</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for violation in violations %}
+            <tr>
+                <td>{{ violation.ID }}</td>
+                <td>{{ violation.Date }}</td>
+                <td>{{ violation.Time }}</td>
+                <td>{{ violation.Camera_Number }}</td>
+                <td>{{ violation.Without_Jacket }}</td>
+                <td>{{ violation.Without_Helmet }}</td>
+                <td>{{ violation.Both }}</td>
+                <td>
+                    {% if violation.Image %}
+                        <img src="{{ violation.Image }}" alt="Violation image for camera {{ violation.Camera_Number }}" style="width: 100px; height: auto;">
+                    {% else %}
+                        No Image
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html> 
+

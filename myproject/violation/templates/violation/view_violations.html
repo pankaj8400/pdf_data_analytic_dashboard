@@ -1,0 +1,22 @@
+{% extends 'violation/base.html' %}
+{% load static %}
+{% block title %}View Violations{% endblock %}
+
+{% block content %}
+    <div class="violations-container">
+        <br><br>
+        <h2 class="h2">Violations per Month (Bar Graph)</h2>
+        <br>
+        <img class="responsive-img" src="data:image/png;base64,{{ bar_graph_data }}" alt="Bar Graph">
+        <br><br>
+        <h2 class="h2">Violations Trend (Line Chart)</h2>
+        <br>
+        <img class="responsive-img" src="data:image/png;base64,{{ line_chart_data }}" alt="Line Chart">
+<br><br>
+        <h2 class="h2">Violations per Camera Number per Month (Stacked Bar Chart)</h2>
+        <br>
+        <img class="responsive-img" src="data:image/png;base64,{{ camera_violation_chart }}" alt="Camera Violation Chart">
+        <br><br>
+    </div>
+{% endblock %}
+

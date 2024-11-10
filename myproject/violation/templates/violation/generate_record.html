@@ -1,0 +1,21 @@
+{% extends 'violation/base.html' %}
+{% load static %}
+
+{% block title %}Generate Record{% endblock %}
+
+{% block content %}
+    <div class="report-container">
+        <div class="report">
+            <h2 class="h2 text-center">Generate Report</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Generate Report</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

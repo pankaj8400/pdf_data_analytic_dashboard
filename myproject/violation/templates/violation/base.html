@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Violation Report</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/project.css' %}">
+    
+    {% comment %} <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column; background-color: #f7f7f7; background-image: url('{% static 'img/sm_bg.jpg' %}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+    <!-- Main Container -->
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <!-- Sidebar -->
+            <div class="col-sm-2 border-right border-dark" yle="background-color: rgb(135, 206, 235); height: 100vh; padding:5;">
+                {% include "Violation/sidebar.html" %}
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-sm-10 d-flex flex-column" style="padding:10; margin: 10;  background-image: url('{% static 'img/sm_bg.jpg' %}');">
+                <!-- Optional Header Section -->
+                {% comment %} <header class="text-right py-3 pr-3">
+                    <a href="{% url 'dashboard' %}" class="btn btn-primary">Go to Dashboard</a> <!-- Link at top right -->
+                </header> {% endcomment %}
+
+                <!-- Main Content Block -->
+                <main class="flex-grow-1 d-flex justify-content-center align-items-center">
+                    {% block content %}
+                        <!-- Your main content goes here -->
+                    {% endblock content %}
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    {% comment %} <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script> {% endcomment %}
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/all.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>
+

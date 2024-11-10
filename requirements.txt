@@ -1,0 +1,6 @@
+Django==5.1.1  # Replace with the actual version you are using
+pandas==2.2.2  # Replace with the actual version
+fpdf==1.7.2
+Pillow==10.4.0  # Replace with the actual version
+matplotlib==3.9.2  # Replace with the actual version
+python-dateutil==2.9.0.post0  # Replace with the actual version

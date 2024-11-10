@@ -1,0 +1,11 @@
+{% extends 'violation/base.html' %}
+
+{% block content %}
+  <div style="text-align: right;">
+    <a href="{% url 'dashboard' %}">Back to Dashboard</a>
+  </div>
+  <h2>No Violations Found</h2>
+  <p>No violations were found for the selected date range.</p>
+  
+{% endblock %}
+
